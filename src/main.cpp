@@ -4,9 +4,12 @@
 
 
 #include <Arduino.h>
-#include <WiFi.h>
-#include <PubSubClient.h>
 #include <ArduinoJson.h>
+#include <freertos/FreeRTOS.h> // 添加 FreeRTOS 头文件
+#include <freertos/task.h>     // 添加 FreeRTOS 任务管理头文件
+#include <freertos/semphr.h>   // 添加 FreeRTOS 信号量头文件
+#include <Wire.h>
+
 
 /************** 函数声明 ***************/
 uint16_t CRC16(const uint8_t *data, uint16_t length);
